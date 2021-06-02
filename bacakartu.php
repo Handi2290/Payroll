@@ -27,8 +27,8 @@
 <div class="container-fluid" style="text-align: center;">
 	<?php if($nokartu=="") { ?>
 	<br>
-	<h2>E-ABSENSI STIE PPI<h2>
-	<br><br><br><br>
+	<h1>E-ABSENSI STIE PPI<h1>
+	<br><br><br>
 	<h3>Absen : <?php echo $mode; ?> </h3>
 	<h3>Silahkan Tempelkan Kartu RFID Anda</h3>
 	<img src="assets/img/rfid.png" style="width: 150px"> <br>
