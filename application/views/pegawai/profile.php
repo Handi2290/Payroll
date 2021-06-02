@@ -31,6 +31,9 @@
                       <option <?php if ($data->jenis_kelamin == 'P') {echo 'selected'; }?> value="P">Perempuan</option>
                     </select>
                   </div>
+                  <div class="form-group">
+                    <a href="<?=base_url('Pegawai/ganti_password')?>" class="btn btn-primary" role="button">Ganti Password</a>
+                  </div>
                 </div>
               </div>
               <div class="card-footer">

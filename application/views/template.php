@@ -82,6 +82,17 @@
             </a>
           </li>
 
+          <!-- hanya ditampilkan jika user pegawai yang login -->
+          <?php if ($this->session->userdata('level') == 'pegawai') { ?>
+          
+          <li class="nav-item">
+            <a href="<?=base_url($this->session->userdata('level'))?>/profile" class="nav-link">
+              <i class="far fa-file nav-icon"></i>
+              <p>Profile</p>
+            </a>
+          </li>
+          <?php } ?>
+
           <!-- hanya ditampilkan jika user admin yang login -->
           <?php if ($this->session->userdata('level') == 'admin') { ?>
 
