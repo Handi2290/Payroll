@@ -24,6 +24,7 @@ class Admin extends CI_Controller {
 		$data['cuti']	= $this->M_data->cutitoday($tahun,$bulan,$hari)->num_rows();
 		$data['izin']	= $this->M_data->izintoday($tahun,$bulan,$hari)->num_rows() + $this->M_data->sakittoday($tahun,$bulan,$hari)->num_rows();
 		$data['absensi']= $this->M_data->absen()->num_rows();
+		$data['absensi_rfid']= $this->M_data->absen	()->num_rows();
 		$data['departemen']= $this->db->get('departemen')->num_rows();
 		$data['title']	= 'Dashboard';
 		$data['body']	= 'admin/home';
@@ -137,6 +138,7 @@ class Admin extends CI_Controller {
 			'id_departemen'	=> $p['departemen'],
 			'waktu_masuk'	=> $p['masuk'],
 			'gaji'			=> $p['gaji'],
+			'nokartu'		=> $p['nokartu'],
 		];
 		$this->db->trans_start();
 		$this->db->update('user',$user,['nip'=>$id]);
@@ -162,6 +164,15 @@ class Admin extends CI_Controller {
 		$data['data']	= $this->M_data->absen()->result();
 		$data['title']	= 'Data Absen Pegawai';
 		$data['body']	= 'admin/absen';
+		$this->load->view('template',$data);
+	}
+	//Data Absensi RFID
+	public function absensi_rfid()
+	{
+		$data['web']	= $this->web;
+		$data['data']	= $this->M_data->absen()->result();
+		$data['title']	= 'Data Absen RFID';
+		$data['body']	= 'admin/absen_rfid';
 		$this->load->view('template',$data);
 	}
 	//Data pengajuan cuti

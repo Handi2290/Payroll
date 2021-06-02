@@ -39,6 +39,15 @@ class M_data extends CI_Model {
 		$this->db->order_by('absen.waktu','desc');
 		return $this->db->get();
 	}
+	public function absen_rfid()
+	{
+		$this->db->select('*');
+		$this->db->from('absen');
+		$this->db->join('pegawai','absen.nip = pegawai.nip');
+		$this->db->join('user','pegawai.nip = user.nip');
+		$this->db->order_by('absen.waktu','desc');
+		return $this->db->get();
+	}
 	public function absensi_pegawai($id)
 	{
 		$this->db->select('*');

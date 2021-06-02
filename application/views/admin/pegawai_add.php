@@ -11,14 +11,14 @@
               </div>
               <form method="post" action="<?=base_url('admin/pegawai_simpan/')?>">
                 <div class="card-body">
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                   <label>NIP</label>
                   <div id="norfid"></div>
-                  </div>
-                  <!-- <div class="form-group">
+                  </div> -->
+                  <div class="form-group">
                     <label>NIP</label>
                     <input type="text" name="nip" class="form-control" required="" >
-                  </div> -->
+                  </div>
                   <div class="form-group">
                     <label>Nama</label>
                     <input type="text" name="nama" class="form-control" required="">

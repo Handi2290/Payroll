@@ -109,18 +109,18 @@
             </ul>
           </li>
           <?php } ?>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="<?=base_url($this->session->userdata('level'))?>/absensi" class="nav-link">
               <i class="nav-icon fas fa-fingerprint"></i>
               <p> Absensi </p>
             </a>
-          </li> 
-          <!-- <li class="nav-item">
-            <a href="/absensi" class="nav-link">
-              <i class="nav-icon fas fa-fingerprint"></i>
-              <p> Absensi KTP </p>
+          </li>  -->
+          <li class="nav-item">
+            <a href="<?=base_url($this->session->userdata('level'))?>/absensi_rfid" class="nav-link">
+              <i class="nav-icon fas fa-id-card"></i>
+              <p> Absensi RFID </p>
             </a>
-          </li>    -->
+          </li>   
 
           <?php if ($this->session->userdata('level') == 'admin') { ?>
           <li class="nav-item">
@@ -254,6 +254,9 @@
     } );
 } );
 </script>
+
+<!-- Scan -->
+<script src="<?=base_url('assets/')?>scan.js"></script>
 
 <!-- sweetalert -->
 <script src="<?php echo base_url('assets/') ?>alert.js"></script>

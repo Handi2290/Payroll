@@ -14,13 +14,13 @@
               <form method="post" action="pegawai/proses_absen">
                <div class="card-body">
                   <?php if ($waktu != 'dilarang') { ?>
-                  <p class="text-center">Hai, <?=$this->session->userdata('nama')?> anda hari ini belum melakukan absen <b><?=$waktu?></b>. 
+                  <p class="text-center">Hai <?=$this->session->userdata('nama')?>, anda hari ini belum melakukan absen <b><?=$waktu?></b>. 
                   <br> Silahkan tap kartu absen anda! <br><br> <img class="center" src="<?php echo base_url(); ?>assets/img/animasi2.gif"></p> 
                   <!-- tombol absen diganti dengan kartu rfid -->
                   <!-- <br><br><button class="btn btn-primary" >Absen <?=$waktu?></button></p> -->
                   <input type="hidden" name="ket" id="ket" value="<?=$waktu?>">
                   <?php }else{ ?>
-                  <p class="text-center">Hai, <?=$this->session->userdata('nama')?> anda hari ini sudah melakukan absensi <b>Masuk</b> dan <b>Pulang</b></p>
+                  <p class="text-center">Hai <?=$this->session->userdata('nama')?>, anda hari ini sudah melakukan absensi <b>Masuk</b> dan <b>Pulang</b></p>
                   <?php }  ?>
                 </div>
                 </form>
@@ -33,9 +33,8 @@
             <div class="card">
               <div class="card-header"> Slip Gaji </h3>
               </div>
-               <div class="card-body">
-                  
-                  <p class="text-center">Hai, <b><?=$this->session->userdata('nama')?></b> silahkan download slip gaji anda pada tombol berikut <br><br>
+               <div class="card-body">                  
+                  <p class="text-center">Hai <b><?=$this->session->userdata('nama')?></b>, silahkan download slip gaji anda pada tombol dibawah ini <br><br>
                   <a class="btn btn-info" href="<?=base_url('pegawai/slip')?>">Download Slip Gaji</a></p>
                 </div>
             </div>
@@ -45,7 +44,7 @@
       </div>
     </section>
 
-    <!-- jQuery -->
+    <!-- Scan RFID -->
     <script src="<?=base_url('assets/')?>scan.js"></script>
     
           

@@ -45,6 +45,15 @@ class Pegawai extends CI_Controller {
 	{
 		$data['web']	= $this->web;
 		$data['data']	= $this->M_data->absensi_pegawai($this->session->userdata('nip'))->result();
+		$data['title']	= 'Data Absen RFID';
+		$data['body']	= 'pegawai/absen';
+		$this->load->view('template',$data);
+	}
+	//data absen
+	public function absensi_rfid()
+	{
+		$data['web']	= $this->web;
+		$data['data']	= $this->M_data->absensi_pegawai($this->session->userdata('nip'))->result();
 		$data['title']	= 'Data Absen';
 		$data['body']	= 'pegawai/absen';
 		$this->load->view('template',$data);
