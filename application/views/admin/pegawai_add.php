@@ -1,4 +1,4 @@
-    <section class="content">
+     <section class="content">
       <div class="container-fluid">
         <!-- Main row -->
         <div class="row">
@@ -11,6 +11,10 @@
               </div>
               <form method="post" action="<?=base_url('admin/pegawai_simpan/')?>">
                 <div class="card-body">
+                  <div class="form-group">
+                  <label>NIP</label>
+                  <div id="norfid"></div>
+                  </div>
                   <!-- <div class="form-group">
                     <label>NIP</label>
                     <input type="text" name="nip" class="form-control" required="" >
@@ -59,3 +63,12 @@
         </div>
       </div>
     </section>
+
+    <!-- pembacaan no kartu otomatis -->
+    <script type="text/javascript">
+      $(document).ready(function(){
+        setInterval(function(){
+          $("#norfid").load('nokartu.php')
+        }, 0);  //pembacaan file nokartu.php, tiap 1 detik = 1000
+      });
+    </script>
